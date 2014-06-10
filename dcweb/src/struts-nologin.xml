@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="nologin" extends="struts-default" namespace="">
+		<interceptors>
+			<interceptor name="exceptionManager" class="com.jstrd.asdc.interceptor.ExceptionInterceptor"/>
+			<!--定义一个包含权限检查的拦截器栈-->   
+            <interceptor-stack name="mydefault">   
+                <!--配置内建默认拦截器-->   
+                <interceptor-ref name="defaultStack"/>   
+                <interceptor-ref name="exceptionManager"/>  
+            </interceptor-stack>  
+		</interceptors>  
+		<default-interceptor-ref name="mydefault"></default-interceptor-ref>
+        <global-results>
+			<result name="exceptionPage">/errorlog.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="exceptionPage" exception="java.lang.Exception"></exception-mapping>
+		</global-exception-mappings>
+		<action name="index" class="com.jstrd.asdc.action.IndexAction" method="index">
+			<result>/index.jsp</result>
+			<result name="tomain">/main.jsp</result>
+		</action>
+		<action name="csvdownload" class="com.jstrd.asdc.action.SwfAction" method="csvDownload"> 
+            <result name="success" type="stream">
+               <param name="inputName">inputStream</param>  
+               <param name="contentType">${contentType}</param>
+               <param name="contentDisposition">attachment;filename="${downloadFileName}"</param>  
+               <param name="bufferSize">4096</param>  
+            </result>
+        </action>
+        <action name="txtdownload" class="com.jstrd.asdc.action.SwfAction" method="txtDownload"> 
+            <result name="success" type="stream">
+               <param name="inputName">inputStream</param>  
+               <param name="contentType">${contentType}</param>
+               <param name="contentDisposition">attachment;filename="${downloadFileName}"</param>  
+               <param name="bufferSize">4096</param>  
+            </result>
+        </action>
+	</package>
+	<package name="swfinterface" extends="json-default" namespace="">
+		<action name="initOverview" class="com.jstrd.asdc.action.SwfAction_overview" method="initOverview">
+			<result type="json"/>
+		</action>
+		<action name="getPower" class="com.jstrd.asdc.action.SwfAction_power" method="getPower">
+			<result type="json"/>
+		</action>
+		<action name="swfdcp" class="com.jstrd.asdc.action.SwfAction_dcp" method="swfdcp">
+			<result type="json"/>
+		</action>
+		<action name="swfdcv" class="com.jstrd.asdc.action.SwfAction_dcv" method="swfdcv">
+			<result type="json"/>
+		</action>
+		<action name="swfacv" class="com.jstrd.asdc.action.SwfAction_acv" method="swfacv">
+			<result type="json"/>
+		</action>
+		<action name="swfacp" class="com.jstrd.asdc.action.SwfAction_acp" method="swfacp">
+			<result type="json"/>
+		</action>
+		<action name="swfacf" class="com.jstrd.asdc.action.SwfAction_acf" method="swfacf">
+			<result type="json"/>
+		</action>
+		<action name="swfacc" class="com.jstrd.asdc.action.SwfAction_acc" method="swfacc">
+			<result type="json"/>
+		</action>
+		<action name="swfdcc" class="com.jstrd.asdc.action.SwfAction_dcc" method="swfdcc">
+			<result type="json"/>
+		</action>
+		<action name="swfinvtemp" class="com.jstrd.asdc.action.SwfAction_invtemp" method="swfinvtemp">
+			<result type="json"/>
+		</action>
+		<action name="swfco2av" class="com.jstrd.asdc.action.SwfAction_co2av" method="swfco2av">
+			<result type="json"/>
+		</action>
+		<action name="swfincome" class="com.jstrd.asdc.action.SwfAction_income" method="swfincome">
+			<result type="json"/>
+		</action>
+	</package>
+	<package name="ajaxnologin" extends="json-default" namespace="">
+		<action name="ajaxlogin" class="com.jstrd.asdc.action.LoginAction" method="ajaxlogin">
+			<result type="json"/>
+		</action>
+		<action name="checkEmailAndVerCode" class="com.jstrd.asdc.action.UserAction" method="checkEmailAndVerCode">
+			<result type="json" /> 
+		</action>
+	</package>
+</struts>

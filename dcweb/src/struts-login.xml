@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="login" extends="struts-default" namespace="">
+		<interceptors>
+			<interceptor class="com.jstrd.asdc.interceptor.AuthorityInterceptor" name="authority"/>
+			<interceptor name="exceptionManager" class="com.jstrd.asdc.interceptor.ExceptionInterceptor"/>
+			<!--定义一个包含权限检查的拦截器栈-->   
+            <interceptor-stack name="mydefault">   
+                <!--配置内建默认拦截器-->   
+                <interceptor-ref name="defaultStack"/>   
+                <!--配置自定义的拦截器-->   
+                <interceptor-ref name="authority"/>  
+                <interceptor-ref name="exceptionManager"/>  
+            </interceptor-stack>  
+		</interceptors>  
+		<default-interceptor-ref name="mydefault"></default-interceptor-ref>
+        <global-results>
+			<result name="tologin" type="redirectAction">index</result>
+			<result name="exceptionPage">/errorlog.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="exceptionPage" exception="java.lang.Exception"></exception-mapping>
+		</global-exception-mappings>
+		<action name="logout" class="com.jstrd.asdc.action.LoginAction" method="logout">
+			<result name="success" type="redirectAction">index</result>
+		</action>
+		<action name="main">
+			<result>/main.jsp</result>
+		</action>
+		<action name="mainPage" class="com.jstrd.asdc.action.MainAction" method="mainPage">
+			<result name="mainPage" type="redirectAction">powerlist</result>
+			<result name="tologin" type="redirectAction">index</result>
+		</action>
+	</package>
+	<package name="innerlogin" extends="struts-default" namespace="">
+		<interceptors>
+			<interceptor name="authority" class="com.jstrd.asdc.interceptor.AuthorityInterceptor"/>
+			<interceptor name="exceptionManager" class="com.jstrd.asdc.interceptor.ExceptionInterceptor"/>
+			<!--定义一个包含权限检查的拦截器栈-->   
+            <interceptor-stack name="mydefault">   
+                <!--配置内建默认拦截器-->   
+                <interceptor-ref name="defaultStack"/>   
+                <!--配置自定义的拦截器-->   
+                <interceptor-ref name="authority"/>  
+                <interceptor-ref name="exceptionManager"/> 
+            </interceptor-stack>  
+		</interceptors>  
+		<default-interceptor-ref name="mydefault"></default-interceptor-ref>
+        <global-results>
+			<result name="tologin" type="redirectAction">index</result>
+			<result name="topowerlist" type="redirectAction">powerlist</result>
+			<result name="errorlog">/errorlog.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="errorlog" exception="java.lang.Exception"></exception-mapping>
+		</global-exception-mappings>
+		
+		<action name="gotoindex">
+			<result>/seesion_timeout.jsp</result>
+		</action>
+		<action name="overview" class="com.jstrd.asdc.action.MenuAction" method="overview">
+			<result>/overViewStation.jsp</result>
+			<result name="login" type="redirectAction">index</result>
+		</action>
+		<action name="powerlist" class="com.jstrd.asdc.action.MenuAction" method="powerlist">
+			<result>/stationList.jsp</result>
+			<result name="adminlist">/stationAdminList.jsp</result>
+			<result name="login" type="redirectAction">/index.jsp</result>
+			<result name="input" type="redirectAction">createStation</result>
+		</action>
+
+		<action name="createStation" class="com.jstrd.asdc.action.StationAction" method="showCreate">
+			<result>/stationCreate.jsp</result>
+			<result name="show">/stationCreate.jsp</result>
+			<result name="error">/stationCreate.jsp</result>
+		</action>
+		<action name="createNewStationQuery" class="com.jstrd.asdc.action.StationAction" method="createStation">
+			<result>/createStationOk.jsp</result>
+			<result name="show">/stationCreate.jsp</result>
+			<result name="error">/stationCreate.jsp</result>
+		</action>
+		<action name="showStationModify" class="com.jstrd.asdc.action.StationAction" method="showModify">
+			<result>/stationModify.jsp</result>
+			<result name="show">/stationModify.jsp</result>
+		</action>
+		<action name="updateStation" class="com.jstrd.asdc.action.UserAction" method="updateStation">
+			<result>/detailStation.jsp</result>
+			<result name="error">/detailStation.jsp</result>
+		</action>
+		<action name="detailStation" class="com.jstrd.asdc.action.UserAction" method="detailStation">
+			<result>/detailStation.jsp</result>
+			<result name="error">/detailStation.jsp</result>
+		</action>
+		<action name="showStationPmu" class="com.jstrd.asdc.action.UserAction" method="showStationPmu">
+			<result>/pmuManager.jsp</result>
+			<result name="error">/pmuManager.jsp</result>
+		</action>
+		<action name="showbp">
+			<result>/basicParam.jsp</result>
+		</action>
+		<action name="showsa">
+			<result>/stationAttr.jsp</result>
+		</action>
+		<action name="showStationInv" class="com.jstrd.asdc.action.UserAction" method="showStationInv">
+			<result>/invManager.jsp</result>
+			<result name="error">/invManager.jsp</result>
+		</action>
+		<action name="event" class="com.jstrd.asdc.action.EventAction" method="event">
+			<result>/eventStation.jsp</result>
+		</action>
+		<action name="power" class="com.jstrd.asdc.action.MenuAction" method="power">
+			<result>/powerStation.jsp</result>
+		</action>
+		<action name="dcc" class="com.jstrd.asdc.action.ChartAction" method="dcc">
+			<result>/dc_current.jsp</result>
+		</action>
+		<action name="dcp" class="com.jstrd.asdc.action.ChartAction" method="dcp">
+			<result>/dc_power.jsp</result>
+		</action>
+		<action name="dcv" class="com.jstrd.asdc.action.ChartAction" method="dcv">
+			<result>/dc_voltage.jsp</result>
+		</action>
+		<action name="acc" class="com.jstrd.asdc.action.ChartAction" method="acc">
+			<result>/ac_current.jsp</result>
+		</action>
+		<action name="acp" class="com.jstrd.asdc.action.ChartAction" method="acp">
+			<result>/ac_power.jsp</result>
+		</action>
+		<action name="acf" class="com.jstrd.asdc.action.ChartAction" method="acf">
+			<result>/ac_frequency.jsp</result>
+		</action>
+		<action name="acv" class="com.jstrd.asdc.action.ChartAction" method="acv">
+			<result>/ac_voltage.jsp</result>
+		</action>
+		<action name="inve" class="com.jstrd.asdc.action.ChartAction" method="inve">
+			<result>/inverter_temp.jsp</result>
+		</action>
+		<action name="income" class="com.jstrd.asdc.action.ChartAction" method="income">
+			<result>/income.jsp</result>
+		</action>
+		<action name="co2v" class="com.jstrd.asdc.action.ChartAction" method="co2v">
+			<result>/co2.jsp</result>
+		</action>
+		<action name="userconf"  class="com.jstrd.asdc.action.MenuAction" method="userconf">
+			<result>/userconf.jsp</result>
+		</action>
+		<action name="editUser"  class="com.jstrd.asdc.action.UserAction" method="editUser">
+			<result>/userconf_editUser.jsp</result>
+		</action>
+		<action name="reportConf"  class="com.jstrd.asdc.action.EventAction" method="reportConf">
+			<result>/reportconf.jsp</result>
+		</action>
+		<action name="editReportConf"  class="com.jstrd.asdc.action.EventAction" method="editReportConf">
+			<result>/reportconf_edit.jsp</result>
+		</action>
+		<action name="rolemanager"  class="com.jstrd.asdc.action.UserAction" method="roleManager">
+			<result>/rolemanager.jsp</result>
+		</action>
+		<action name="createSysuser">
+			<result>/rolemanager_cesysuser.jsp</result>
+		</action>
+		<action name="editSysUser" class="com.jstrd.asdc.action.UserAction" method="editSysUser">
+			<result>/rolemanager_cesysuser.jsp</result>
+		</action>
+		<action name="viewLimits" class="com.jstrd.asdc.action.UserAction" method="viewLimits">
+			<result>/rolemanager_velimits.jsp</result>
+		</action>
+		<action name="editLimits" class="com.jstrd.asdc.action.UserAction" method="editLimits">
+			<result>/rolemanager_velimits.jsp</result>
+		</action>
+
+		<action name="chartShow" class="com.jstrd.asdc.action.ChartShowAction" method="chartShow">
+			<result name="chart">/chart.jsp</result>
+			<result name="chartco2">/chartco2.jsp</result>
+			<result name="chartgain">/chartgain.jsp</result>
+			<result name="chartenergy">/chartenergy.jsp</result>
+		</action>
+		<action name="updateInvListForUser" class="com.jstrd.asdc.action.ChartShowAction" method="updateInvListForUser">
+			<result >/updateInvListForUser.jsp</result>
+		</action>
+		<action name="confInvList" class="com.jstrd.asdc.action.ConfigAction" method="invList">
+			<result >/config_inv_list.jsp</result>
+		</action>
+		<action name="confInvManager" class="com.jstrd.asdc.action.ConfigAction" method="invManager">
+			<result >/config_inv_manager.jsp</result>
+		</action>
+		<action name="confInvView" class="com.jstrd.asdc.action.ConfigAction" method="inv2View">
+			<result >/config_inv_list.jsp</result>
+		</action>
+
+		<action name="confPmuList" class="com.jstrd.asdc.action.ConfigAction" method="pmuList">
+			<result >/config_pmu_list.jsp</result>
+		</action>
+		<action name="confPmuManager" class="com.jstrd.asdc.action.ConfigAction" method="pmuManager">
+			<result >/config_pmu_manager.jsp</result>
+		</action>
+		<action name="confPmuView" class="com.jstrd.asdc.action.ConfigAction" method="invView">
+			<result >/config_pmu_list.jsp</result>
+		</action>
+
+		<action name="equip_view" class="com.jstrd.asdc.action.ConfigAction" method="equip_view">
+			<result>/config_equip_view.jsp</result>
+		</action>
+		<action name="accountList" class="com.jstrd.asdc.action.ConfigAction" method="accountList">
+			<result >/config_adminaccount_list.jsp</result>
+		</action>
+		
+		<action name="reportDayShow" class="com.jstrd.asdc.action.ConfigAction" method="reportDayShow">
+			<result >/config_report_day.jsp</result>
+		</action>
+		
+		<action name="reportMonShow" class="com.jstrd.asdc.action.ConfigAction" method="reportMonShow">
+			<result >/config_report_mon.jsp</result>
+		</action>
+		
+		<action name="reportEventShow" class="com.jstrd.asdc.action.ConfigAction" method="reportEventShow">
+			<result >/config_report_evn.jsp</result>
+		</action>
+		<action name="shareAccountList" class="com.jstrd.asdc.action.ConfigAction" method="shareAccountConfListShow">
+			<result >/config_shareaccount_list.jsp</result>
+		</action>
+		<action name="accountManagerList" class="com.jstrd.asdc.action.ConfigAction" method="accountSearchList">
+			<result >/accountManager.jsp</result>
+		</action>
+		<action name="editAccountConfig" class="com.jstrd.asdc.action.UserAction" method="getUserRegInfo">
+			<result >/editAccountInfo.jsp</result>
+		</action>
+		<action name="viewAccountConfig" class="com.jstrd.asdc.action.UserAction" method="viewUserRegInfo">
+			<result >/viewAccountInfo.jsp</result>
+		</action>
+		<action name="plantmanager" class="com.jstrd.asdc.action.MenuAction" method="powerAllList">
+			<result >/stationAdminList.jsp</result>
+		</action>
+		
+		<action name="changeUserPwd" class="com.jstrd.asdc.action.UserAction" method="changeUserPwsShow">
+			<result >/changePasswd.jsp</result>
+		</action>
+		<action name="updatePasswdShow" class="com.jstrd.asdc.action.UserAction" method="updatePasswdShow">
+			<result >/updatePasswd1.jsp</result>
+		</action>
+		<action name="updatePasswdType" class="com.jstrd.asdc.action.UserAction" method="updatePasswdType">
+			<result >/updatePasswd2.jsp</result>
+		</action>
+		
+		<action name="updatePasswd" class="com.jstrd.asdc.action.UserAction" method="updatePasswd">
+			<result >/updatePasswd22.jsp</result>
+		</action>
+		<action name="updatePasswdMail" class="com.jstrd.asdc.action.UserAction" method="updatePasswdCode">
+			<result >/updatePasswd3.jsp</result>
+		</action>
+		<action name="pmuImport" class="com.jstrd.asdc.action.FileUploadAction" method="pmuImport">
+			<result >/importPmu.jsp</result>
+		</action>
+		<action name="inputPmuShow" class="com.jstrd.asdc.action.StationAction" method="inputPmuShow">
+			<result >/importPmu.jsp</result>
+		</action>
+		<action name="sharePlantCheck" class="com.jstrd.asdc.action.ConfigAction" method="checkStationShareCode">
+			<result >/activeSharePlant.jsp</result>
+		</action>
+		
+		<action name="sysqueryevent" class="com.jstrd.asdc.action.ConfigAction" method="findEvent">
+			<result >/eventFindList.jsp</result>
+		</action>
+		<action name="searchDict" class="com.jstrd.asdc.action.ConfigAction" method="searchDict">
+			<result >/config_dict_list.jsp</result>
+		</action>
+	</package> 
+	<package name="delpack" extends="json-default" namespace="">
+		<action name="delEvent" class="com.jstrd.asdc.action.EventAction" method="delEvent">
+			<result type="json"/>
+		</action>
+		<action name="docreateNewStation" class="com.jstrd.asdc.action.UserAction" method="createNewStation">
+			<result type="json"/>
+		</action>
+		<action name="reNamePmu" class="com.jstrd.asdc.action.UserAction" method="reNamePmu">
+			<result type="json"/>
+		</action>
+		<action name="createNormalUser" class="com.jstrd.asdc.action.UserAction" method="createNormalUser">
+			<result type="json"/>
+		</action>
+		<action name="delNormalUser" class="com.jstrd.asdc.action.UserAction" method="delNormalUser">
+			<result type="json"/>
+		</action>
+		<action name="updateUser" class="com.jstrd.asdc.action.UserAction" method="updateUser">
+			<result type="json"/>
+		</action>
+		<action name="editUserLimits" class="com.jstrd.asdc.action.UserAction" method="editUserLimits">
+			<result type="json"/>
+		</action>
+		<action name="changeShowInv" class="com.jstrd.asdc.action.ChartAction" method="changeShowInv">
+			<result type="json"/>
+		</action>
+		<action name="doCreateSysuser" class="com.jstrd.asdc.action.UserAction" method="doCreateSysuser">
+			<result type="json"/>
+		</action>
+		<action name="doEditSysuser" class="com.jstrd.asdc.action.UserAction" method="doEditSysuser">
+			<result type="json"/>
+		</action>
+		<action name="deleteSysUser" class="com.jstrd.asdc.action.UserAction" method="deleteSysUser">
+			<result type="json"/>
+		</action>
+		<action name="updateRoleLimits" class="com.jstrd.asdc.action.UserAction" method="updateRoleLimits">
+			<result type="json"/>
+		</action>
+		<action name="pmuInfoView" class="com.jstrd.asdc.action.ConfigAction" method="pmuView">
+			<result type="json"/>
+		</action>
+		<action name="invInfoView" class="com.jstrd.asdc.action.ConfigAction" method="invView">
+			<result type="json"/>
+		</action>
+		<action name="devInfoView" class="com.jstrd.asdc.action.ConfigAction" method="devView">
+			<result type="json"/>
+		</action>
+		<action name="setDevByName" class="com.jstrd.asdc.action.ConfigAction" method="setDevName">
+			<result type="json"/>
+		</action>
+		<action name="delStation" class="com.jstrd.asdc.action.UserAction" method="delStation">
+			<result type="json"/>
+		</action>
+		<action name="unbindPmu" class="com.jstrd.asdc.action.ConfigAction" method="unbindPmu">
+			<result type="json"/>
+		</action>
+		<action name="bindPmu" class="com.jstrd.asdc.action.ConfigAction" method="bindPmu">
+			<result type="json"/>
+		</action>
+		<action  name="StationModifyQuery" class="com.jstrd.asdc.action.StationAction" method="modifyStation">
+			<result type="json"/>
+		</action>
+		<!-- 2014-04-10 key -->
+		<action  name="generateStationKey" class="com.jstrd.asdc.action.StationAction" method="generateStationKey">
+			<result type="json"/>
+		</action>
+		
+		<action  name="addAdminAccount" class="com.jstrd.asdc.action.ConfigAction" method="addAdminAccount">
+			<result type="json"/>
+		</action>
+		<action  name="updateAdminAccount" class="com.jstrd.asdc.action.ConfigAction" method="updateAdminAccount">
+			<result type="json"/>
+		</action>
+		<action  name="removeAdminAccount" class="com.jstrd.asdc.action.ConfigAction" method="removeAdminAccount">
+			<result type="json"/>
+		</action>
+		<action  name="reportDay" class="com.jstrd.asdc.action.ConfigAction" method="reportDay">
+			<result type="json"/>
+		</action>
+		<action  name="sendReportDay" class="com.jstrd.asdc.action.ConfigAction" method="sendReportDay">
+			<result type="json"/>
+		</action>
+		<action  name="reportMon" class="com.jstrd.asdc.action.ConfigAction" method="reportMon">
+			<result type="json"/>
+		</action>
+		
+		<action  name="sendReportMonth" class="com.jstrd.asdc.action.ConfigAction" method="sendReportMonth">
+			<result type="json"/>
+		</action>
+		<action  name="reportEvent" class="com.jstrd.asdc.action.ConfigAction" method="reportEvent">
+			<result type="json"/>
+		</action>
+		<action  name="sendReportEvent" class="com.jstrd.asdc.action.ConfigAction" method="sendReportEvent">
+			<result type="json"/>
+		</action>
+		<action  name="removeStation" class="com.jstrd.asdc.action.StationAction" method="removeStation">
+			<result type="json"/>
+		</action>
+		<action  name="createStationShareAccount" class="com.jstrd.asdc.action.ConfigAction" method="createStationShareAccount">
+			<result type="json"/>
+		</action>
+		<action  name="createStationShareAccountRight" class="com.jstrd.asdc.action.ConfigAction" method="createStationShareAccountRight">
+			<result type="json"/>
+		</action>
+		<action  name="removeAccFromStation" class="com.jstrd.asdc.action.ConfigAction" method="removeAccFromStation">
+			<result type="json"/>
+		</action>
+		<action  name="editUserRegInfo" class="com.jstrd.asdc.action.UserAction" method="editUserRegInfo">
+			<result type="json"/>
+		</action>
+		<action  name="changeUserPws" class="com.jstrd.asdc.action.UserAction" method="changeUserPws">
+			<result type="json"/>
+		</action>
+		<action  name="getCheckCode" class="com.jstrd.asdc.action.UserAction" method="getCheckCode">
+			<result type="json"/>
+		</action>
+		<action  name="doUpdatePasswd" class="com.jstrd.asdc.action.UserAction" method="doUpdatePasswd">
+			<result type="json"/>
+		</action>
+		<action name="inputPmu" class="com.jstrd.asdc.action.StationAction" method="inputPmu">
+			<result type="json"/>
+		</action>
+		<action name="shareAccountActive" class="com.jstrd.asdc.action.ConfigAction" method="shareaccountactive">
+			<result type="json"/>
+		</action>
+		
+		<action name="setPmuUpdate" class="com.jstrd.asdc.action.ConfigAction" method="setPmuUpdate">
+			<result type="json"/>
+		</action>
+		<action name="createDict" class="com.jstrd.asdc.action.ConfigAction" method="createDict">
+			<result type="json"/>
+		</action>
+		<action name="updateDict" class="com.jstrd.asdc.action.ConfigAction" method="updateDict">
+			<result type="json"/>
+		</action>
+		<action name="removeDict" class="com.jstrd.asdc.action.ConfigAction" method="removeDict">
+			<result type="json"/>
+		</action>
+		
+		
+		<action name="getTimeOffset" class="com.jstrd.asdc.action.StationAction" method="getTimeOffset">
+			<result type="json"/>
+		</action>
+		
+		<action name="updateStationAttention" class="com.jstrd.asdc.action.ConfigAction" method="updateStationAttention">
+			<result type="json"/>
+		</action>
+		
+		<!-- 删除逆变器 -->
+		<action name="remove_invbasepmu" class="com.jstrd.asdc.action.ConfigAction" method="removeInvbasepmu">
+			<result type="json"/>
+		</action>
+		
+		<action name="client_date" class="com.jstrd.asdc.action.IndexAction" method="getClientDate">
+			<result type="json"/>
+		</action>
+		<action name="plantManagerDaily" class="com.jstrd.asdc.action.MenuAction" method="plantDayStatistics">
+			<result type="json"></result>
+		</action>
+		
+	</package>
+	<package name="returnList" extends="json-default" namespace="">
+		<action name="ajaxgetstate" class="com.jstrd.asdc.action.MenuAction" method="ajaxgetstate">
+			 <result type="json">  
+        <param name="excludeProperties">trendStatService</param>  
+    </result>  
+		</action>
+	</package>
+</struts>
