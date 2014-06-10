@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="register" extends="struts-default" namespace="">
+		<interceptors>
+			<interceptor name="exceptionManager" class="com.jstrd.asdc.interceptor.ExceptionInterceptor"/>
+			<!--定义一个包含权限检查的拦截器栈-->   
+            <interceptor-stack name="mydefault">   
+                <!--配置内建默认拦截器-->   
+                <interceptor-ref name="defaultStack"/>   
+                <interceptor-ref name="exceptionManager"/>  
+            </interceptor-stack>  
+		</interceptors>  
+		<default-interceptor-ref name="mydefault"></default-interceptor-ref>
+        <global-results>
+			<result name="exceptionPage">/errorlog.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="exceptionPage" exception="java.lang.Exception"></exception-mapping>
+		</global-exception-mappings>
+		<action name="main1">
+			<result>/main.jsp</result>
+		</action>
+		<action name="register" class="com.jstrd.asdc.action.UserAction"  method="doRegister1">
+			<result>/userRegist1.jsp</result>
+		</action>
+		<action name="register2step" class="com.jstrd.asdc.action.UserAction"  method="doRegister2">
+			<result>/userRegist2.jsp</result>
+		</action>
+		<action name="registerCreate" class="com.jstrd.asdc.action.UserAction"  method="regUser">
+			<result>/userRegist3.jsp</result>
+			<result name="error">/userRegist2.jsp</result>
+		</action>
+		<action name="userRegCheck" class="com.jstrd.asdc.action.UserAction"  method="userRegCheck">
+			<result>/activeAccount.jsp</result>
+		</action>
+		<action name="bindStation">
+			<result>/bindStation.jsp</result>
+		</action>
+		<action name="stateList" class="com.jstrd.asdc.action.UserAction"  method="getStateInfolist">
+			<result>/stateList.jsp</result>
+		</action>
+		<action name="dobindStation" class="com.jstrd.asdc.action.UserAction"  method="bindStation">
+			<interceptor-ref name="token"/> 
+			<interceptor-ref name="defaultStack"/>
+			<result name="invalid.token" type="redirectAction">main1</result>
+			<result type="redirectAction">main1</result>
+		</action>
+		<action name="doregister" class="com.jstrd.asdc.action.UserAction" method="doRegister">
+			<interceptor-ref name="token"/> 
+			<interceptor-ref name="defaultStack"/>
+			<result type="redirectAction">bindStation</result>
+			<result name="invalid.token" type="redirectAction">bindStation</result>
+			<result name="input" type="redirectAction">register</result>
+		</action>
+	</package>
+	<package name="ajaxRegister" extends="json-default" namespace="">
+		<action name="checkEmail" class="com.jstrd.asdc.action.UserAction" method="checkEmail">
+			<result type="json" /> 
+		</action>
+		<action name="reSendVerCode" class="com.jstrd.asdc.action.UserAction" method="reSendVerCode">
+			<result type="json" /> 
+		</action>
+		<action name="checkPsno" class="com.jstrd.asdc.action.StationAction" method="checkPsno">
+			<result type="json" /> 
+		</action>
+		<action name="stateListAjax" class="com.jstrd.asdc.action.UserAction"  method="getStateInfolistAjax">
+			<result type="json" /> 
+		</action>
+		<action name="userActiveAdmin" class="com.jstrd.asdc.action.UserAction"  method="userActiveAdmin">
+			<result type="json" /> 
+		</action>
+	</package>
+</struts>

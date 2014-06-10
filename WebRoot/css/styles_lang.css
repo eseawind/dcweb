@@ -1,0 +1,76 @@
+/* ================================================================ 
+This copyright notice must be untouched at all times.
+
+The original version of this stylesheet and the associated (x)html
+is available at http://www.cssplay.co.uk/menus/drop_examples.html
+Copyright (c) 2005-2007 Stu Nicholls. All rights reserved.
+This stylesheet and the assocaited (x)html may be modified in any 
+way to fit your requirements.
+=================================================================== */
+/* commom style for all browsers */
+.divlang {
+text-align:left; position:relative; background:transparent; height:22px; margin:0 auto;
+}
+.divlang ul {
+padding:0; margin:0; list-style-type: none;
+}
+.divlang ul li {
+float:left; position:relative;margin-bottom: 0px;
+}
+
+.divlang ul li a, .divlang ul li a:visited {
+display:block; text-decoration:none; width:192px; height:22px; padding-left:43px; margin-right:1px; line-height:22px;
+}
+* html .divlang ul li a, .divlang ul li a:visited {
+width:100px; w\idth:70px;
+}
+
+.divlang ul li ul {
+visibility:hidden; position:absolute; top:0; left:0; height:0; overflow:hidden;
+}
+.divlang table {
+/*margin:-1px;*/
+border-collapse:collapse;
+}
+
+/* fist line style for IE7 and non-IE browsers and the second line for IE5.5 and IE6 */
+.divlang ul li:hover a,
+.divlang ul li a:hover {
+color:#000; text-decoration:none; border:0;
+}
+.divlang ul li:hover ul,
+.divlang ul li a:hover ul {
+visibility:visible; width:238px; padding-left:1px; padding-top:1px; height:auto; position:absolute; top:22px; left:-40px; background:#fff; border:1px solid #ccc; overflow:visible;
+}
+.divlang ul li:hover ul li a,
+.divlang ul li a:hover ul li a {
+display:block; background:#eee; padding-left:0px; margin-bottom:1px; text-decoration:none; height:22px; line-height:22px; width:161px; w\idth:118px;
+}
+.divlang ul li:hover ul li a.droplang,
+.divlang ul li a:hover ul li a.droplang {
+display:block; height:23px; width:118px; w\idth:75px;
+}
+.divlang ul li:hover ul li ul,
+.divlang ul li a:hover ul li a ul {
+visibility:hidden; position:absolute; top:0; left:0; height:0; overflow:hidden;
+}
+.divlang ul li:hover ul li a:hover,
+.divlang ul li a:hover ul li a:hover {
+background:#E0EAF4; color:#000; text-decoration:none;
+}
+.divlang ul li:hover ul li:hover ul,
+.divlang ul li a:hover ul li a:hover ul {
+visibility:visible; position:absolute; top:0; left:166px; height:auto; border:1px solid #ccc;
+}
+.divlang ul li:hover ul li:hover ul.left,
+.divlang ul li a:hover ul li a:hover ul.left {
+left:-166px;
+}
+.divlang ul li:hover ul li:hover ul li a,
+.divlang ul li a:hover ul li a:hover ul li a {
+display:block; height:23px; line-height:23px; width:118px; w\idth:75px;
+}
+.divlang ul li:hover ul li:hover ul li:hover a,
+.divlang ul li a:hover ul li a:hover ul li a:hover {
+color:#000; text-decoration:none;
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="userDao" class="com.jstrd.asdc.dao.impl.UserDaoImpl">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	<bean id="userService" class="com.jstrd.asdc.service.impl.UserServiceImpl">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	
+	<bean id="stationDao" class="com.jstrd.asdc.dao.impl.StationDaoImpl">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	<bean id="stationService" class="com.jstrd.asdc.service.impl.StationServiceImpl">
+		<property name="stationDao" ref="stationDao"></property>
+	</bean>
+	
+	<bean id="userLimitDao" class="com.jstrd.asdc.dao.impl.UserLimitDaoImpl">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	<bean id="userLimitService" class="com.jstrd.asdc.service.impl.UserLimitServiceImpl">
+		<property name="userLimitDao" ref="userLimitDao"></property>
+	</bean>
+	
+	<bean id="eventDao" class="com.jstrd.asdc.dao.impl.EventDaoImpl">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	<bean id="eventService" class="com.jstrd.asdc.service.impl.EventServiceImpl">
+		<property name="eventDao" ref="eventDao"></property>
+	</bean>
+	
+	<bean id="inverterDao" class="com.jstrd.asdc.dao.impl.InverterDaoImpl">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	<bean id="inverterService" class="com.jstrd.asdc.service.impl.InverterServiceImpl">
+		<property name="inverterDao" ref="inverterDao"></property>
+	</bean>
+
+</beans>

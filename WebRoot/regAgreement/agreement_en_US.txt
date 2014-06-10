@@ -1,0 +1,38 @@
+Dear client, you are welcome to register and become a client of Solar Cloud. Before registration, please carefully read this registration agreement. No matter you have actually read this Agreement or not, as long as you select "Agree with the above and register" and click "Agree" button, it shall be deemed that you have agreed and signed this service agreement. 
+
+1. General Rules
+  1.1 Solar Cloud is such PV(photovoltaic) remote monitoring system as supplied by Jiangsu Zeversolar New Energy Co., Ltd. (hereinafter called as "Zeversolar"). 
+  1.2 All ownership right, explanation right and operation right of all Solar Cloud services shall be possessed and covered by Zeversolar. 
+  1.3 This Agreement will be updated from time to time by Zeversolar. The clients shall immediately read and agree. Zeversolar shall not cover the notification obligation. Such notices, announcements, statements or similar contents in Zeversolar's website shall be deemed as integral part of this Agreement. If a client disagrees Zeversolar's amendments to relevant articles of this Agreement, the client shall have the right to suspend using Solar Cloud. If a client continues using Solar Cloud, it shall be deemed that the client has accepted Zeversolar's amendments to relevant articles of this Agreement.
+
+2. Attentions 
+  2.1 After the completion of registration, you should keep confidential all account numbers and passwords, and you should disclose the same to any unauthorized third party. Any loss or damage as arising from the failure of a client to properly keep its account number or passwords shall not be covered or borne by Zeversolar. 
+  2.2 If you are a power-station manager, we will send verification E-mail to you when you share the power station. After being active, the other party will possess and enjoy such operation power limit that you authorizes. It should be careful and cautious when you share the power station and authorize management power limit, so as to avoid loss or damage due to improper authorization. 
+  2.3 If necessary, Zeversolar shall have the right to check relevant information of a client or its power station. With the client's consent, Zeversolar may alter and change relevant configuration or information of the power station. 
+
+3. Use Rules 
+  3.1 A client shall strictly comply with the management and use rules of Solar Cloud. 
+  3.2 A client shall comply with relevant laws and regulations, shall not upload any illegal information, and shall not infringe any patent right, copyright, trademark right, reputation right or legitimate interest of any third party. In case of violation, the client shall independently cover and bear all liabilities. 
+  3.3 A client shall carefully keep its Solar Cloud account numbers and passwords. It shall independently cover and bear all losses as arising from improper management and use of its account numbers and passwords, including all loss as arising from improper use of the client, its authorized third party or its unauthorized third party. If the client finds that its account is used by an unauthorized third party or its account information is disclosed, it shall immediately modify the passwords and notify us. 
+  3.4 A client shall authentically provide Solar Cloud with relevant information, including E-mail address, PMU series numbers, etc. The client shall independently cover and bear all liabilities as arising from incorrect or inaccurate information. 
+
+4. Privacy Protection 
+  4.1 Zeversolar will not publicize, or provide any third party with individual client's registration information and the client's non-publicity contents in Solar Cloud when it uses Solar Cloud, except any of the following circumstances: 
+  (1) If Zeversolar obtains the client's prior express authorization; 
+  (2) If Zeversolar is required by relevant laws and regulations; 
+  (3) If Zeversolar is required by competent government departments; 
+  (4) If Zeversolar is to safeguard public interests; or
+  (5) If Zeversolar is to improve the service quality of Solar Cloud. 
+  4.2 Zeversolar will possibly cooperate with third party in providing a client with relevant network service. In such event, if such third party agrees to equally cover and bear client privacy protection responsibility, then Zeversolar shall have the right to provide such third party with client's registration information. 
+  4.3 Under the precondition that individual client's private information is not disclosed, Zeversolar shall have the right to analyze entire client database and commercially use such database. 
+
+5. Disclaimer 
+  5.1 Zeversolar shall make all efforts to ensure accuracy and completeness of the information in Solar Cloud. In case of such information or data errors as arising from a client's violation of the use rules, Zeversolar shall cover no liability. 
+  5.2 If network service suspension or other defects as arising from force majeure or such reasons out of Zeversolar's control, Zeversolar shall cover no liability, but shall make all efforts to reduce client's loss and effect as arising herefrom. 
+  5.3 If necessary, Zeversolar may check relevant information of client's power station. With the client's consent, Zeversolar may modify and adjust relevant configuration of the power station. 
+  5.4 Zeversolar shall cover and bear no liability in case of quality problem and any loss as arising from the following products or services that Zeversolar provides for a client: 
+  (1) Any product or service that Zeversolar presents to a client;
+  (2) Such products or services that Zeversolar provide (free of charge) for a client. 
+  5.5 If a client violates the use rules or relevant laws or regulations, Zeversolar shall have the right to stop and suspend the service, no matter it is notified or not. In such event, Zeversolar shall cover and bear no liability against the client or any third party. 
+  5.6 With respect to such client who intentionally damages Solar Cloud System and uses the System to cause loss of third party, Zeversolar shall reserve the right to prosecute. Such expenses as arising herefrom, including but not limited to lawsuit fee, lawyer's fee, investigation fee and business trip fee shall be fully covered by such client. 
+
