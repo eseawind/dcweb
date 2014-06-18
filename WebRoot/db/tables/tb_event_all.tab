@@ -1,0 +1,42 @@
+create table TB_EVENT_ALL
+(
+  did       NUMBER,
+  ssno      VARCHAR2(32),
+  occdt     DATE,
+  val1      NUMBER,
+  val2      NUMBER,
+  l_tag     NUMBER,
+  c_tag     NUMBER,
+  stationid NUMBER,
+  devt      NUMBER,
+  insdt     DATE
+)
+;
+comment on column TB_EVENT_ALL.did
+  is '???????';
+comment on column TB_EVENT_ALL.ssno
+  is '??????';
+comment on column TB_EVENT_ALL.occdt
+  is '???????';
+comment on column TB_EVENT_ALL.val1
+  is '?1,????1????,2:????:??';
+comment on column TB_EVENT_ALL.val2
+  is '?2';
+comment on column TB_EVENT_ALL.l_tag
+  is '????,0:?????1:???';
+comment on column TB_EVENT_ALL.c_tag
+  is '?????,0:???,1:???';
+comment on column TB_EVENT_ALL.stationid
+  is '????';
+comment on column TB_EVENT_ALL.devt
+  is '?????1:PMU,2:???';
+comment on column TB_EVENT_ALL.insdt
+  is '????';
+create index EVEN_SSNO on TB_EVENT_ALL (SSNO);
+create index IDX_TB_EVENT_ALL_C_TAG on TB_EVENT_ALL (C_TAG);
+create index IDX_TB_EVENT_ALL_L_TAG on TB_EVENT_ALL (L_TAG);
+create index IDX_TB_EVENT_ALL_M1 on TB_EVENT_ALL (STATIONID, L_TAG, C_TAG);
+create index INDEX_EVENT_STID on TB_EVENT_ALL (STATIONID);
+create index INDEX_EVENT_V1V2 on TB_EVENT_ALL (VAL1, VAL2);
+create index INDEX_TB_EVENT_A_OCCDT on TB_EVENT_ALL (OCCDT);
+

@@ -1,0 +1,28 @@
+create table TB_STATION_REPORT_MONTHLY
+(
+  stationid   NUMBER not null,
+  reportid    NUMBER not null,
+  state       NUMBER,
+  reciverlist VARCHAR2(200),
+  rep_format  NUMBER,
+  itemstr     VARCHAR2(200),
+  lan         VARCHAR2(10)
+)
+;
+comment on column TB_STATION_REPORT_MONTHLY.stationid
+  is '????';
+comment on column TB_STATION_REPORT_MONTHLY.reportid
+  is '?????';
+comment on column TB_STATION_REPORT_MONTHLY.state
+  is '??1:????:???';
+comment on column TB_STATION_REPORT_MONTHLY.reciverlist
+  is '????????';
+comment on column TB_STATION_REPORT_MONTHLY.rep_format
+  is '?????';
+comment on column TB_STATION_REPORT_MONTHLY.itemstr
+  is '??????';
+comment on column TB_STATION_REPORT_MONTHLY.lan
+  is '????';
+alter table TB_STATION_REPORT_MONTHLY
+  add constraint KEY_STATION_REPORT_MON_MAIN primary key (STATIONID, REPORTID);
+

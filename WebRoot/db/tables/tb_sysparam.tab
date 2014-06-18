@@ -1,0 +1,17 @@
+create table TB_SYSPARAM
+(
+  segment  VARCHAR2(100),
+  key_name VARCHAR2(100),
+  key_val  VARCHAR2(1000),
+  content  VARCHAR2(1000)
+)
+;
+comment on column TB_SYSPARAM.segment
+  is '???';
+comment on column TB_SYSPARAM.key_name
+  is '????';
+comment on column TB_SYSPARAM.key_val
+  is '???';
+comment on column TB_SYSPARAM.content
+  is '????';
+

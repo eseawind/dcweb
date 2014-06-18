@@ -1,0 +1,20 @@
+create table TB_PMU_VER_DEFINE
+(
+  nk    VARCHAR2(100),
+  hd    VARCHAR2(100),
+  swc   VARCHAR2(100),
+  d_url VARCHAR2(500),
+  ldt   DATE
+)
+;
+comment on column TB_PMU_VER_DEFINE.nk
+  is 'NK???';
+comment on column TB_PMU_VER_DEFINE.hd
+  is '?????';
+comment on column TB_PMU_VER_DEFINE.swc
+  is '?????';
+comment on column TB_PMU_VER_DEFINE.d_url
+  is '??URL';
+comment on column TB_PMU_VER_DEFINE.ldt
+  is '??????';
+

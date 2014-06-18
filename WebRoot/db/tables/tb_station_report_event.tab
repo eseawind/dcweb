@@ -1,0 +1,34 @@
+create table TB_STATION_REPORT_EVENT
+(
+  stationid     NUMBER not null,
+  state         NUMBER,
+  reciverlist   VARCHAR2(200),
+  rep_format    NUMBER,
+  nextdelay     NUMBER,
+  emptysend     NUMBER,
+  maxeventlimit NUMBER,
+  itemstr       VARCHAR2(100),
+  lan           VARCHAR2(10)
+)
+;
+comment on column TB_STATION_REPORT_EVENT.stationid
+  is '????';
+comment on column TB_STATION_REPORT_EVENT.state
+  is '??1:????:???';
+comment on column TB_STATION_REPORT_EVENT.reciverlist
+  is '????????';
+comment on column TB_STATION_REPORT_EVENT.rep_format
+  is '??????';
+comment on column TB_STATION_REPORT_EVENT.nextdelay
+  is '???????????';
+comment on column TB_STATION_REPORT_EVENT.emptysend
+  is 'u?????????????????';
+comment on column TB_STATION_REPORT_EVENT.maxeventlimit
+  is '???????????????????';
+comment on column TB_STATION_REPORT_EVENT.itemstr
+  is '????????';
+comment on column TB_STATION_REPORT_EVENT.lan
+  is '??';
+alter table TB_STATION_REPORT_EVENT
+  add constraint KEY_STATION_REPORT_EVENT_MAIN primary key (STATIONID);
+

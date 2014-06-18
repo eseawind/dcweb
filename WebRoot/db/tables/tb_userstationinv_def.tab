@@ -1,0 +1,8 @@
+create table TB_USERSTATIONINV_DEF
+(
+  userid    NUMBER,
+  stationid NUMBER,
+  isno      VARCHAR2(50)
+)
+;
+

@@ -1,0 +1,35 @@
+create table TB_SENSOR
+(
+  ssno      VARCHAR2(40) not null,
+  stationid NUMBER,
+  psno      VARCHAR2(40),
+  byname    VARCHAR2(64),
+  sentype   NUMBER,
+  model     VARCHAR2(40),
+  factory   VARCHAR2(40),
+  brand     VARCHAR2(40),
+  softver   VARCHAR2(40),
+  hardwver  VARCHAR2(40)
+)
+;
+comment on column TB_SENSOR.ssno
+  is '????????';
+comment on column TB_SENSOR.stationid
+  is '????';
+comment on column TB_SENSOR.psno
+  is 'PMU???';
+comment on column TB_SENSOR.byname
+  is '???';
+comment on column TB_SENSOR.sentype
+  is '???????';
+comment on column TB_SENSOR.factory
+  is '???';
+comment on column TB_SENSOR.brand
+  is '??';
+comment on column TB_SENSOR.softver
+  is '??????';
+comment on column TB_SENSOR.hardwver
+  is '??????';
+alter table TB_SENSOR
+  add primary key (SSNO);
+

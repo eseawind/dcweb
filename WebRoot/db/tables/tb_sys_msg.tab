@@ -1,0 +1,26 @@
+create table TB_SYS_MSG
+(
+  idd     NUMBER,
+  msgfrom VARCHAR2(50),
+  msgto   VARCHAR2(50),
+  action  NUMBER,
+  val1    NUMBER,
+  val2    NUMBER,
+  context VARCHAR2(500)
+)
+;
+comment on column TB_SYS_MSG.idd
+  is '?????';
+comment on column TB_SYS_MSG.msgfrom
+  is '???';
+comment on column TB_SYS_MSG.msgto
+  is '????';
+comment on column TB_SYS_MSG.action
+  is '???';
+comment on column TB_SYS_MSG.val1
+  is '?1';
+comment on column TB_SYS_MSG.val2
+  is '?2';
+comment on column TB_SYS_MSG.context
+  is '????';
+

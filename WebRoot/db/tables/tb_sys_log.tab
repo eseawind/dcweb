@@ -1,0 +1,23 @@
+create table TB_SYS_LOG
+(
+  idd     NUMBER,
+  occdt   DATE,
+  val1    NUMBER,
+  val2    NUMBER,
+  context VARCHAR2(500),
+  str1    VARCHAR2(100)
+)
+;
+comment on column TB_SYS_LOG.idd
+  is '?????';
+comment on column TB_SYS_LOG.occdt
+  is '??????????';
+comment on column TB_SYS_LOG.val1
+  is '?1';
+comment on column TB_SYS_LOG.val2
+  is '?2';
+comment on column TB_SYS_LOG.context
+  is '??';
+comment on column TB_SYS_LOG.str1
+  is '??????1';
+

@@ -1,0 +1,38 @@
+create table TB_USERSTATION
+(
+  userid       NUMBER not null,
+  stationid    NUMBER not null,
+  createdt     DATE,
+  noteinfo     VARCHAR2(200),
+  createuserid NUMBER,
+  roleid       NUMBER,
+  rightstr     VARCHAR2(100),
+  state        NUMBER,
+  mailactive   NUMBER,
+  verifycode   VARCHAR2(50),
+  verifydt     DATE
+)
+;
+comment on column TB_USERSTATION.userid
+  is '?????';
+comment on column TB_USERSTATION.stationid
+  is '????';
+comment on column TB_USERSTATION.createdt
+  is '????????';
+comment on column TB_USERSTATION.noteinfo
+  is '???';
+comment on column TB_USERSTATION.createuserid
+  is '?????';
+comment on column TB_USERSTATION.roleid
+  is '??Z??';
+comment on column TB_USERSTATION.rightstr
+  is '??????????L????????????';
+comment on column TB_USERSTATION.mailactive
+  is '????????';
+comment on column TB_USERSTATION.verifycode
+  is '?????????';
+comment on column TB_USERSTATION.verifydt
+  is '???????????';
+alter table TB_USERSTATION
+  add primary key (USERID, STATIONID);
+

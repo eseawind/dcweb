@@ -1,0 +1,83 @@
+create table TB_PMU
+(
+  psno       VARCHAR2(20) not null,
+  stationid  NUMBER,
+  idex       VARCHAR2(16),
+  pmutype    VARCHAR2(32),
+  ip         VARCHAR2(20),
+  mac        VARCHAR2(20),
+  softver    VARCHAR2(60),
+  hardwver   VARCHAR2(60),
+  state      NUMBER,
+  usedspace  NUMBER,
+  totalspace NUMBER,
+  lldt       DATE,
+  llip       VARCHAR2(16),
+  byname     VARCHAR2(64),
+  evetnum    NUMBER,
+  eve0num    NUMBER,
+  subtype    VARCHAR2(32),
+  factory    VARCHAR2(100),
+  penpai     VARCHAR2(100),
+  devname    VARCHAR2(100),
+  devtype    NUMBER,
+  ludt       DATE,
+  upa        NUMBER,
+  upn        NUMBER,
+  curgate    VARCHAR2(16)
+)
+;
+comment on column TB_PMU.psno
+  is 'PMU???';
+comment on column TB_PMU.stationid
+  is '????';
+comment on column TB_PMU.idex
+  is '???';
+comment on column TB_PMU.pmutype
+  is 'PMU??';
+comment on column TB_PMU.ip
+  is 'PMU??IP??';
+comment on column TB_PMU.mac
+  is 'MAC??';
+comment on column TB_PMU.softver
+  is '?????';
+comment on column TB_PMU.hardwver
+  is '?????';
+comment on column TB_PMU.state
+  is 'PMU????';
+comment on column TB_PMU.usedspace
+  is '??????';
+comment on column TB_PMU.totalspace
+  is 'PMU?????';
+comment on column TB_PMU.lldt
+  is '????????????';
+comment on column TB_PMU.llip
+  is '????IP';
+comment on column TB_PMU.byname
+  is '??';
+comment on column TB_PMU.evetnum
+  is '????';
+comment on column TB_PMU.eve0num
+  is '??????';
+comment on column TB_PMU.subtype
+  is '?????????';
+comment on column TB_PMU.factory
+  is '??';
+comment on column TB_PMU.penpai
+  is '??';
+comment on column TB_PMU.devname
+  is '????';
+comment on column TB_PMU.devtype
+  is '?????';
+comment on column TB_PMU.ludt
+  is '????????';
+comment on column TB_PMU.upa
+  is '??????1:Auto,0:Disable';
+comment on column TB_PMU.upn
+  is '??????1:??,0???';
+comment on column TB_PMU.curgate
+  is '当前PMU所登录的DCGATE名称';
+alter table TB_PMU
+  add primary key (PSNO);
+create index INDEX_PMU_PMUTYPE on TB_PMU (PMUTYPE);
+

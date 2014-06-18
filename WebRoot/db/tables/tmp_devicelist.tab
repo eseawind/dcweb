@@ -1,0 +1,17 @@
+create global temporary table TMP_DEVICELIST
+(
+  devtyp    NUMBER,
+  devno     VARCHAR2(32),
+  byname    VARCHAR2(100),
+  state     NUMBER,
+  today     NUMBER,
+  total     NUMBER,
+  pac       NUMBER,
+  peak      NUMBER,
+  percetage NUMBER,
+  newnum    NUMBER,
+  kind      VARCHAR2(32),
+  totalnum  NUMBER
+)
+on commit preserve rows;
+

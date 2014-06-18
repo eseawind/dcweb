@@ -1,0 +1,12 @@
+create table TB_PUSHTASK
+(
+  tid      NUMBER not null,
+  tokenstr VARCHAR2(100),
+  title    VARCHAR2(100),
+  key_val  VARCHAR2(200),
+  createdt DATE
+)
+;
+alter table TB_PUSHTASK
+  add constraint PK_TB_PUSHTASK primary key (TID);
+

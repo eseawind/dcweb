@@ -1,0 +1,258 @@
+create table TB_INVDATA10
+(
+  idid          NUMBER(16) not null,
+  psno          VARCHAR2(20),
+  isno          VARCHAR2(20),
+  stationid     NUMBER,
+  recvdate      DATE,
+  fen10         NUMBER(3),
+  vpv1          NUMBER,
+  vpv2          NUMBER,
+  vpv3          NUMBER,
+  vpv4          NUMBER,
+  vpv5          NUMBER,
+  vpv6          NUMBER,
+  vpv7          NUMBER,
+  vpv8          NUMBER,
+  vpv9          NUMBER,
+  vpv10         NUMBER,
+  vpv11         NUMBER,
+  vpv12         NUMBER,
+  vpv13         NUMBER,
+  vpv14         NUMBER,
+  vpv15         NUMBER,
+  vpv16         NUMBER,
+  vpv17         NUMBER,
+  vpv18         NUMBER,
+  vpv19         NUMBER,
+  vpv20         NUMBER,
+  ipv1          NUMBER,
+  ipv2          NUMBER,
+  ipv3          NUMBER,
+  ipv4          NUMBER,
+  ipv5          NUMBER,
+  ipv6          NUMBER,
+  ipv7          NUMBER,
+  ipv8          NUMBER,
+  ipv9          NUMBER,
+  ipv10         NUMBER,
+  ipv11         NUMBER,
+  ipv12         NUMBER,
+  ipv13         NUMBER,
+  ipv14         NUMBER,
+  ipv15         NUMBER,
+  ipv16         NUMBER,
+  ipv17         NUMBER,
+  ipv18         NUMBER,
+  ipv19         NUMBER,
+  ipv20         NUMBER,
+  ppv1          NUMBER,
+  ppv2          NUMBER,
+  ppv3          NUMBER,
+  ppv4          NUMBER,
+  ppv5          NUMBER,
+  ppv6          NUMBER,
+  ppv7          NUMBER,
+  ppv8          NUMBER,
+  ppv9          NUMBER,
+  ppv10         NUMBER,
+  ppv11         NUMBER,
+  ppv12         NUMBER,
+  ppv13         NUMBER,
+  ppv14         NUMBER,
+  ppv15         NUMBER,
+  ppv16         NUMBER,
+  ppv17         NUMBER,
+  ppv18         NUMBER,
+  ppv19         NUMBER,
+  ppv20         NUMBER,
+  vac1          NUMBER,
+  vac2          NUMBER,
+  vac3          NUMBER,
+  iac1          NUMBER,
+  iac2          NUMBER,
+  iac3          NUMBER,
+  status        NUMBER,
+  cos_phi       NUMBER,
+  under_excited NUMBER,
+  pac           NUMBER,
+  sac           NUMBER,
+  qac           NUMBER,
+  fac           NUMBER,
+  e_total       NUMBER,
+  h_total       NUMBER,
+  e_today       NUMBER,
+  tempval       NUMBER,
+  timezone      NUMBER
+)
+;
+comment on column TB_INVDATA10.idid
+  is '?????';
+comment on column TB_INVDATA10.psno
+  is 'PMU???';
+comment on column TB_INVDATA10.isno
+  is '??????';
+comment on column TB_INVDATA10.stationid
+  is '????';
+comment on column TB_INVDATA10.recvdate
+  is '?????????';
+comment on column TB_INVDATA10.fen10
+  is '??????10??????';
+comment on column TB_INVDATA10.vpv1
+  is '?????,V,??0.1??';
+comment on column TB_INVDATA10.vpv2
+  is '?????,V';
+comment on column TB_INVDATA10.vpv3
+  is '?????,V';
+comment on column TB_INVDATA10.vpv4
+  is '?????,V';
+comment on column TB_INVDATA10.vpv5
+  is '?????,V';
+comment on column TB_INVDATA10.vpv6
+  is '?????,V';
+comment on column TB_INVDATA10.vpv7
+  is '?????,V';
+comment on column TB_INVDATA10.vpv8
+  is '?????,V';
+comment on column TB_INVDATA10.vpv9
+  is '?????,V';
+comment on column TB_INVDATA10.vpv10
+  is '?????,V';
+comment on column TB_INVDATA10.vpv11
+  is '?????,V';
+comment on column TB_INVDATA10.vpv12
+  is '?????,V';
+comment on column TB_INVDATA10.vpv13
+  is '?????,V';
+comment on column TB_INVDATA10.vpv14
+  is '?????,V';
+comment on column TB_INVDATA10.vpv15
+  is '?????,V';
+comment on column TB_INVDATA10.vpv16
+  is '?????,V';
+comment on column TB_INVDATA10.vpv17
+  is '?????,V';
+comment on column TB_INVDATA10.vpv18
+  is '?????,V';
+comment on column TB_INVDATA10.vpv19
+  is '?????,V';
+comment on column TB_INVDATA10.vpv20
+  is '?????,V';
+comment on column TB_INVDATA10.ipv1
+  is '?????,A,??0.1A';
+comment on column TB_INVDATA10.ipv2
+  is '?????,A';
+comment on column TB_INVDATA10.ipv3
+  is '?????,A';
+comment on column TB_INVDATA10.ipv4
+  is '?????,A';
+comment on column TB_INVDATA10.ipv5
+  is '?????,A';
+comment on column TB_INVDATA10.ipv6
+  is '?????,A';
+comment on column TB_INVDATA10.ipv7
+  is '?????,A';
+comment on column TB_INVDATA10.ipv8
+  is '?????,A';
+comment on column TB_INVDATA10.ipv9
+  is '?????,A';
+comment on column TB_INVDATA10.ipv10
+  is '?????,A';
+comment on column TB_INVDATA10.ipv11
+  is '?????,A';
+comment on column TB_INVDATA10.ipv12
+  is '?????,A';
+comment on column TB_INVDATA10.ipv13
+  is '?????,A';
+comment on column TB_INVDATA10.ipv14
+  is '?????,A';
+comment on column TB_INVDATA10.ipv15
+  is '?????,A';
+comment on column TB_INVDATA10.ipv16
+  is '?????,A';
+comment on column TB_INVDATA10.ipv17
+  is '?????,A';
+comment on column TB_INVDATA10.ipv18
+  is '?????,A';
+comment on column TB_INVDATA10.ipv19
+  is '?????,A';
+comment on column TB_INVDATA10.ipv20
+  is '?????,A';
+comment on column TB_INVDATA10.ppv1
+  is '??????,W';
+comment on column TB_INVDATA10.ppv2
+  is '??????,W';
+comment on column TB_INVDATA10.ppv3
+  is '??????,W';
+comment on column TB_INVDATA10.ppv4
+  is '??????,W';
+comment on column TB_INVDATA10.ppv5
+  is '??????,W';
+comment on column TB_INVDATA10.ppv6
+  is '??????,W';
+comment on column TB_INVDATA10.ppv7
+  is '??????,W';
+comment on column TB_INVDATA10.ppv8
+  is '??????,W';
+comment on column TB_INVDATA10.ppv9
+  is '??????,W';
+comment on column TB_INVDATA10.ppv10
+  is '??????,W';
+comment on column TB_INVDATA10.ppv11
+  is '??????,W';
+comment on column TB_INVDATA10.ppv12
+  is '??????,W';
+comment on column TB_INVDATA10.ppv13
+  is '??????,W';
+comment on column TB_INVDATA10.ppv14
+  is '??????,W';
+comment on column TB_INVDATA10.ppv15
+  is '??????,W';
+comment on column TB_INVDATA10.ppv16
+  is '??????,W';
+comment on column TB_INVDATA10.ppv17
+  is '??????,W';
+comment on column TB_INVDATA10.ppv18
+  is '??????,W';
+comment on column TB_INVDATA10.ppv19
+  is '??????,W';
+comment on column TB_INVDATA10.ppv20
+  is '??????,W';
+comment on column TB_INVDATA10.vac1
+  is '??????,V';
+comment on column TB_INVDATA10.vac2
+  is '??????,V,??0.1V';
+comment on column TB_INVDATA10.vac3
+  is '??????,V';
+comment on column TB_INVDATA10.iac1
+  is '??????,A,??0.1A';
+comment on column TB_INVDATA10.iac2
+  is '??????,A';
+comment on column TB_INVDATA10.iac3
+  is '??????,A';
+comment on column TB_INVDATA10.status
+  is '??,1:??0:??';
+comment on column TB_INVDATA10.cos_phi
+  is '????1,1';
+comment on column TB_INVDATA10.under_excited
+  is '?????0??255';
+comment on column TB_INVDATA10.pac
+  is '???????,W';
+comment on column TB_INVDATA10.sac
+  is '??????';
+comment on column TB_INVDATA10.qac
+  is '??????';
+comment on column TB_INVDATA10.fac
+  is '??????,Hz';
+comment on column TB_INVDATA10.e_total
+  is '??????,KWh';
+comment on column TB_INVDATA10.h_total
+  is '????????,??';
+comment on column TB_INVDATA10.e_today
+  is '???????,KWh';
+comment on column TB_INVDATA10.tempval
+  is '??????';
+comment on column TB_INVDATA10.timezone
+  is '??';
+create unique index KEY_INVDATA_ISNOFEN10_UNIQUE on TB_INVDATA10 (ISNO, FEN10);
+

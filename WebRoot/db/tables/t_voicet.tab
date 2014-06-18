@@ -1,0 +1,7 @@
+create table T_VOICET
+(
+  id   INTEGER,
+  name VARCHAR2(20)
+)
+;
+

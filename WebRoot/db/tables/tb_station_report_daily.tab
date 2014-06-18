@@ -1,0 +1,29 @@
+create table TB_STATION_REPORT_DAILY
+(
+  stationid   NUMBER not null,
+  reportid    NUMBER not null,
+  state       NUMBER,
+  reciverlist VARCHAR2(200),
+  rep_format  NUMBER,
+  sendattime  NUMBER,
+  itemstr     VARCHAR2(200),
+  lan         VARCHAR2(10)
+)
+;
+comment on column TB_STATION_REPORT_DAILY.stationid
+  is '????';
+comment on column TB_STATION_REPORT_DAILY.reportid
+  is '?????';
+comment on column TB_STATION_REPORT_DAILY.state
+  is '??1:????0:???';
+comment on column TB_STATION_REPORT_DAILY.reciverlist
+  is '????????';
+comment on column TB_STATION_REPORT_DAILY.rep_format
+  is '??????';
+comment on column TB_STATION_REPORT_DAILY.sendattime
+  is '?????';
+comment on column TB_STATION_REPORT_DAILY.itemstr
+  is '????';
+alter table TB_STATION_REPORT_DAILY
+  add constraint KEY_STATION_REPORT_DAILY_MAIN primary key (STATIONID, REPORTID);
+

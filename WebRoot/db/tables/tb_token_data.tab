@@ -1,0 +1,12 @@
+create table TB_TOKEN_DATA
+(
+  tokenid   VARCHAR2(100),
+  userid    NUMBER,
+  curlan    VARCHAR2(30),
+  starttime NUMBER,
+  endtime   NUMBER,
+  state     NUMBER,
+  createdt  DATE
+)
+;
+

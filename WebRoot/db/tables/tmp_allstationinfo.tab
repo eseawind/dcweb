@@ -1,0 +1,11 @@
+create table TMP_ALLSTATIONINFO
+(
+  e_total     NUMBER,
+  e_ytotal    NUMBER,
+  co2xs       NUMBER,
+  incomexs    NUMBER,
+  stationnum  NUMBER,
+  ystationnum NUMBER
+)
+;
+

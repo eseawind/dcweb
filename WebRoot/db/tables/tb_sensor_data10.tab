@@ -1,0 +1,46 @@
+create table TB_SENSOR_DATA10
+(
+  sdid       NUMBER not null,
+  psno       VARCHAR2(20),
+  ssno       VARCHAR2(20),
+  stationid  NUMBER,
+  recvdate   DATE,
+  fen10      NUMBER,
+  temp1      NUMBER,
+  temp2      NUMBER,
+  temp3      NUMBER,
+  rad1       NUMBER,
+  rad2       NUMBER,
+  rad3       NUMBER,
+  windspeed1 NUMBER,
+  windspeed2 NUMBER,
+  windspeed3 NUMBER
+)
+;
+comment on column TB_SENSOR_DATA10.sdid
+  is '?????';
+comment on column TB_SENSOR_DATA10.psno
+  is 'PMU???';
+comment on column TB_SENSOR_DATA10.ssno
+  is '????????';
+comment on column TB_SENSOR_DATA10.stationid
+  is '????';
+comment on column TB_SENSOR_DATA10.recvdate
+  is '?????????';
+comment on column TB_SENSOR_DATA10.fen10
+  is '???10??????';
+comment on column TB_SENSOR_DATA10.temp1
+  is '??';
+comment on column TB_SENSOR_DATA10.temp2
+  is '??';
+comment on column TB_SENSOR_DATA10.temp3
+  is '??';
+comment on column TB_SENSOR_DATA10.windspeed1
+  is '??';
+comment on column TB_SENSOR_DATA10.windspeed2
+  is '??';
+comment on column TB_SENSOR_DATA10.windspeed3
+  is '??';
+alter table TB_SENSOR_DATA10
+  add primary key (SDID);
+

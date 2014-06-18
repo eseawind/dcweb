@@ -1,0 +1,23 @@
+create global temporary table TMP_STATIONLISTAAAAA
+(
+  stationid   NUMBER,
+  stationname VARCHAR2(100),
+  rightstr    VARCHAR2(80),
+  invtnum     NUMBER,
+  inv1num     NUMBER,
+  pmutnum     NUMBER,
+  pmu1num     NUMBER,
+  evetnum     NUMBER,
+  eve0num     NUMBER,
+  e_total     NUMBER,
+  h_total     NUMBER,
+  roleid      NUMBER,
+  ludt        DATE,
+  co2val      NUMBER,
+  inval       NUMBER,
+  e_today     NUMBER,
+  currency    VARCHAR2(16),
+  iconindex   VARCHAR2(128)
+)
+on commit preserve rows;
+

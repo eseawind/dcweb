@@ -1,0 +1,97 @@
+create table TB_USER
+(
+  userid           NUMBER not null,
+  account          VARCHAR2(50),
+  pwd              VARCHAR2(100),
+  secondname       VARCHAR2(60),
+  firstname        VARCHAR2(60),
+  company          VARCHAR2(150),
+  zip              VARCHAR2(40),
+  city             VARCHAR2(60),
+  tel              VARCHAR2(128),
+  accounttype      NUMBER,
+  language         NUMBER,
+  createdt         DATE,
+  roleid           NUMBER,
+  mailactive       NUMBER,
+  question1        VARCHAR2(250),
+  ans1             VARCHAR2(150),
+  webaddr          VARCHAR2(200),
+  street           VARCHAR2(200),
+  mobile           VARCHAR2(62),
+  a_verifycode     VARCHAR2(62),
+  lastlogindt      DATE,
+  rolestring       VARCHAR2(100),
+  state            NUMBER,
+  verifydt         DATE,
+  province         NUMBER,
+  country          NUMBER,
+  logintodaytimes  NUMBER,
+  loginfailedtimes NUMBER,
+  timezone         NUMBER,
+  ipaddr           VARCHAR2(64),
+  ie_info          VARCHAR2(200),
+  op_sys           VARCHAR2(200)
+)
+;
+comment on column TB_USER.userid
+  is '?????';
+comment on column TB_USER.account
+  is '?????';
+comment on column TB_USER.pwd
+  is '??';
+comment on column TB_USER.secondname
+  is '?';
+comment on column TB_USER.firstname
+  is '?';
+comment on column TB_USER.company
+  is '?????';
+comment on column TB_USER.zip
+  is '??';
+comment on column TB_USER.city
+  is '??';
+comment on column TB_USER.tel
+  is '?????';
+comment on column TB_USER.accounttype
+  is '????';
+comment on column TB_USER.language
+  is '????';
+comment on column TB_USER.createdt
+  is '????????';
+comment on column TB_USER.roleid
+  is '??Z????';
+comment on column TB_USER.mailactive
+  is '??????????';
+comment on column TB_USER.question1
+  is '??';
+comment on column TB_USER.ans1
+  is '????';
+comment on column TB_USER.webaddr
+  is '?????';
+comment on column TB_USER.street
+  is '???';
+comment on column TB_USER.mobile
+  is '???';
+comment on column TB_USER.a_verifycode
+  is '??z???';
+comment on column TB_USER.lastlogindt
+  is '????????????';
+comment on column TB_USER.rolestring
+  is '??????????????';
+comment on column TB_USER.state
+  is '?????';
+comment on column TB_USER.verifydt
+  is '??z???????????';
+comment on column TB_USER.province
+  is '?/?';
+comment on column TB_USER.country
+  is '???';
+comment on column TB_USER.logintodaytimes
+  is '?????????';
+comment on column TB_USER.loginfailedtimes
+  is '????????';
+comment on column TB_USER.timezone
+  is '?????';
+alter table TB_USER
+  add primary key (USERID);
+

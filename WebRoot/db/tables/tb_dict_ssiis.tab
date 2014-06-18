@@ -1,0 +1,25 @@
+create table TB_DICT_SSIIS
+(
+  subtag   VARCHAR2(32),
+  language VARCHAR2(32),
+  val1     NUMBER,
+  val2     NUMBER,
+  context  VARCHAR2(2000),
+  ex1      NUMBER,
+  ex2      VARCHAR2(256)
+)
+;
+comment on column TB_DICT_SSIIS.subtag
+  is '????';
+comment on column TB_DICT_SSIIS.language
+  is '??,en_US????zh_CN??';
+comment on column TB_DICT_SSIIS.val1
+  is '?1,???????????';
+comment on column TB_DICT_SSIIS.val2
+  is '?2,???????????';
+comment on column TB_DICT_SSIIS.context
+  is '??,???????????';
+alter table TB_DICT_SSIIS
+  add constraint KEY_DICT_SSIIS unique (SUBTAG, LANGUAGE, VAL1, VAL2);
+create index INDEX_DICT_V1V2 on TB_DICT_SSIIS (VAL1, VAL2);
+

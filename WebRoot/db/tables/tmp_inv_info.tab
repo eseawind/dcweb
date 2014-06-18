@@ -1,0 +1,28 @@
+create global temporary table TMP_INV_INFO
+(
+  isno     VARCHAR2(30),
+  recvdate DATE,
+  fen10    NUMBER,
+  v1       NUMBER,
+  v2       NUMBER,
+  v3       NUMBER,
+  v4       NUMBER,
+  v5       NUMBER,
+  v6       NUMBER,
+  v7       NUMBER,
+  v8       NUMBER,
+  v9       NUMBER,
+  v10      NUMBER,
+  v11      NUMBER,
+  v12      NUMBER,
+  v13      NUMBER,
+  v14      NUMBER,
+  v15      NUMBER,
+  v16      NUMBER,
+  v17      NUMBER,
+  v18      NUMBER,
+  v19      NUMBER,
+  v20      NUMBER
+)
+on commit preserve rows;
+

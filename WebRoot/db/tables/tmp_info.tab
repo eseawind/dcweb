@@ -1,0 +1,23 @@
+create global temporary table TMP_INFO
+(
+  idd NUMBER,
+  tdt DATE,
+  sv1 VARCHAR2(100),
+  sv2 VARCHAR2(100),
+  sv3 VARCHAR2(100),
+  sv4 VARCHAR2(100),
+  sv5 VARCHAR2(100),
+  sv6 VARCHAR2(100),
+  sv7 VARCHAR2(100),
+  sv8 VARCHAR2(100),
+  nv1 NUMBER,
+  nv2 NUMBER,
+  nv3 NUMBER,
+  nv4 NUMBER,
+  nv5 NUMBER,
+  nv6 NUMBER,
+  nv7 NUMBER,
+  nv8 NUMBER
+)
+on commit preserve rows;
+

@@ -1,0 +1,7 @@
+create sequence SEQ_MAIL_TASK_ID
+minvalue 1
+maxvalue 100000000
+start with 39231
+increment by 1
+cache 20;
+

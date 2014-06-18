@@ -1,0 +1,11 @@
+create global temporary table TMP_STATIONINFO
+(
+  stationid   NUMBER,
+  stationname VARCHAR2(100),
+  invnum      NUMBER,
+  pmunum      NUMBER,
+  e_total     NUMBER,
+  h_total     NUMBER
+)
+on commit preserve rows;
+

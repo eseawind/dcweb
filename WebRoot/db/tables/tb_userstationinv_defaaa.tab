@@ -1,0 +1,14 @@
+create table TB_USERSTATIONINV_DEFAAA
+(
+  userid    NUMBER,
+  stationid NUMBER,
+  isno      VARCHAR2(50)
+)
+;
+comment on column TB_USERSTATIONINV_DEFAAA.userid
+  is '?????';
+comment on column TB_USERSTATIONINV_DEFAAA.stationid
+  is '????';
+comment on column TB_USERSTATIONINV_DEFAAA.isno
+  is '?????????';
+

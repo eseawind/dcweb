@@ -1,0 +1,14 @@
+create global temporary table TMP_STATION_NEW_EVENT
+(
+  did         NUMBER,
+  stationname VARCHAR2(100),
+  ssno        VARCHAR2(32),
+  byname      VARCHAR2(64),
+  msgtype     NUMBER,
+  occdt       DATE,
+  haveread    NUMBER,
+  err_code    NUMBER,
+  describle   VARCHAR2(128)
+)
+on commit preserve rows;
+

@@ -1,0 +1,10 @@
+create table TB_SERIAL
+(
+  idd NUMBER not null
+)
+;
+comment on column TB_SERIAL.idd
+  is '???';
+alter table TB_SERIAL
+  add constraint KEY_PRM_TB_SERIAL primary key (IDD);
+

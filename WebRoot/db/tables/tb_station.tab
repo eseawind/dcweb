@@ -1,0 +1,127 @@
+create table TB_STATION
+(
+  stationid         NUMBER not null,
+  stationname       VARCHAR2(150) not null,
+  createdt          DATE not null,
+  masterid          NUMBER not null,
+  startdt           DATE,
+  commark           VARCHAR2(20),
+  comtype           VARCHAR2(20),
+  comangle          NUMBER,
+  cominsangle       NUMBER,
+  invtype           NUMBER,
+  datacollectortype VARCHAR2(20),
+  seonsortype       VARCHAR2(20),
+  street            VARCHAR2(200),
+  zip               VARCHAR2(40),
+  city              VARCHAR2(50),
+  area              VARCHAR2(20),
+  timezone          NUMBER,
+  jd                NUMBER,
+  wd                NUMBER,
+  h                 NUMBER,
+  bgurl             VARCHAR2(200),
+  co2xs             NUMBER not null,
+  gainxs            NUMBER not null,
+  sharet            NUMBER,
+  stationdesc       VARCHAR2(1000),
+  telphone          VARCHAR2(64),
+  money             VARCHAR2(10),
+  ludt              DATE,
+  companyname       VARCHAR2(150),
+  totalpower        NUMBER,
+  iconindex         VARCHAR2(100),
+  pmutnum           NUMBER,
+  pmu1num           NUMBER,
+  invtnum           NUMBER,
+  inv1num           NUMBER,
+  w_keyval          NUMBER,
+  country           NUMBER,
+  province          NUMBER,
+  isselect          NUMBER,
+  etotaloffset      NUMBER default 0,
+  customerflag      NUMBER default 1,
+  lastportrequestdt DATE,
+  portkey           VARCHAR2(200)
+)
+;
+comment on column TB_STATION.stationid
+  is '????';
+comment on column TB_STATION.stationname
+  is '????';
+comment on column TB_STATION.createdt
+  is '????????';
+comment on column TB_STATION.masterid
+  is '???ID?';
+comment on column TB_STATION.startdt
+  is '???????';
+comment on column TB_STATION.commark
+  is '?????';
+comment on column TB_STATION.comtype
+  is '?????';
+comment on column TB_STATION.comangle
+  is '???????????';
+comment on column TB_STATION.cominsangle
+  is '??????????';
+comment on column TB_STATION.invtype
+  is '?????';
+comment on column TB_STATION.datacollectortype
+  is '??????PMU??';
+comment on column TB_STATION.seonsortype
+  is '???????';
+comment on column TB_STATION.street
+  is '?????';
+comment on column TB_STATION.zip
+  is '??';
+comment on column TB_STATION.city
+  is '??';
+comment on column TB_STATION.area
+  is '???';
+comment on column TB_STATION.timezone
+  is '??';
+comment on column TB_STATION.jd
+  is '???';
+comment on column TB_STATION.wd
+  is '??';
+comment on column TB_STATION.h
+  is '???';
+comment on column TB_STATION.bgurl
+  is '????????????';
+comment on column TB_STATION.co2xs
+  is 'Co2?????';
+comment on column TB_STATION.gainxs
+  is '????';
+comment on column TB_STATION.sharet
+  is '?????';
+comment on column TB_STATION.stationdesc
+  is '????';
+comment on column TB_STATION.telphone
+  is '?????';
+comment on column TB_STATION.money
+  is '?????';
+comment on column TB_STATION.ludt
+  is '???????????';
+comment on column TB_STATION.companyname
+  is '?????';
+comment on column TB_STATION.totalpower
+  is '??????';
+comment on column TB_STATION.iconindex
+  is '???????????';
+comment on column TB_STATION.pmutnum
+  is '???PMU??';
+comment on column TB_STATION.pmu1num
+  is '??PMU??';
+comment on column TB_STATION.invtnum
+  is '?????';
+comment on column TB_STATION.inv1num
+  is '??????';
+comment on column TB_STATION.w_keyval
+  is 'web????????ey?';
+comment on column TB_STATION.country
+  is '???';
+comment on column TB_STATION.province
+  is '?/?';
+alter table TB_STATION
+  add primary key (STATIONID);
+create index INDEX_STATIONT_NAME on TB_STATION (STATIONNAME);
+

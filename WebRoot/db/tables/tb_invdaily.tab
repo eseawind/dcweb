@@ -1,0 +1,34 @@
+create table TB_INVDAILY
+(
+  psno      VARCHAR2(30),
+  isno      VARCHAR2(30),
+  stationid NUMBER,
+  recvdate  DATE,
+  e_today   NUMBER,
+  h_today   NUMBER,
+  e_total   NUMBER,
+  h_total   NUMBER,
+  insdt     DATE
+)
+;
+comment on column TB_INVDAILY.psno
+  is 'PMU???';
+comment on column TB_INVDAILY.isno
+  is '??????';
+comment on column TB_INVDAILY.stationid
+  is '????';
+comment on column TB_INVDAILY.recvdate
+  is '?????????';
+comment on column TB_INVDAILY.e_today
+  is '???????';
+comment on column TB_INVDAILY.h_today
+  is '????????????????';
+comment on column TB_INVDAILY.e_total
+  is '??????,???KWh';
+comment on column TB_INVDAILY.h_total
+  is '???????????????';
+comment on column TB_INVDAILY.insdt
+  is '入库服务器时间';
+create index IX_INVDAILY_ISNO on TB_INVDAILY (ISNO);
+create index IX_INVDAILY_STATIONID on TB_INVDAILY (STATIONID);
+

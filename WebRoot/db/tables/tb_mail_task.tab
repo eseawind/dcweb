@@ -1,0 +1,32 @@
+create table TB_MAIL_TASK
+(
+  taskid      NUMBER,
+  adddt       DATE,
+  stationid   NUMBER,
+  configid    NUMBER,
+  f_html      NUMBER,
+  reportid    NUMBER,
+  reciverlist VARCHAR2(500),
+  itemstr     VARCHAR2(500),
+  lan         VARCHAR2(30)
+)
+;
+comment on column TB_MAIL_TASK.taskid
+  is '????';
+comment on column TB_MAIL_TASK.adddt
+  is '??????';
+comment on column TB_MAIL_TASK.stationid
+  is '????';
+comment on column TB_MAIL_TASK.configid
+  is '????';
+comment on column TB_MAIL_TASK.f_html
+  is '??????';
+comment on column TB_MAIL_TASK.reportid
+  is '?????';
+comment on column TB_MAIL_TASK.reciverlist
+  is '????????????';
+comment on column TB_MAIL_TASK.itemstr
+  is '????????????';
+comment on column TB_MAIL_TASK.lan
+  is '????en_US,zh_CN';
+

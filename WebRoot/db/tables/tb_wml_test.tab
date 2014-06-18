@@ -1,0 +1,7 @@
+create table TB_WML_TEST
+(
+  id   VARCHAR2(11),
+  name VARCHAR2(12)
+)
+;
+
